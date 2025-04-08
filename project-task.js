@@ -69,6 +69,39 @@ for (let i = 0; i < names.length; i++) {
 🔹 Refactor the Original Code:
    - Replace repeated code with meaningful function calls
    - Keep your code clean, readable, and easy to maintain
-*/
 
+*/
 // ✅ Your refactored code goes below this line!
+
+//function to greet users
+function greetUser(name) {
+   console.log("Welcome, " + name + "!");
+}
+
+greetUser("Alice");
+greetUser("Bob");
+greetUser("Charlie");
+
+//function to calculate sum of two numbers
+function getSum(a, b) {
+   return a + b;
+}
+
+console.log("The sum of 5 and 10 is " + getSum(5, 10));
+
+//function to calculate the product of two numbers
+function getProduct(x, y) {
+   return x * y;
+}
+
+console.log("The product of 5 and 10 is " + getProduct(5, 10));
+
+//function to print names in a list
+function printNameList(list) {
+   for (let i = 0; i < list.length; i++) {
+     console.log(list[i]);
+   }
+}
+
+console.log("Names in the list:");
+printNameList(names);
