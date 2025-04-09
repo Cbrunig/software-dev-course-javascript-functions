@@ -89,3 +89,41 @@ reusable functions that solve specific tasks. This activity encourages:
 // - Explain how your team approached the design and testing process
 
 // ✅ Bonus: Can you extend any of the functions to be more flexible or reusable?
+
+const readline = require('readline-sync');
+
+function generateBadge(name, role) {
+    if (!name) name = readline.question("What is your name? ");
+    if (!role) role = readline.question("What is your role? ");
+
+    let newRole = role.charAt(0).toUpperCase() + role.slice(1);
+    return console.log(`Name: ${name}, Role: ${newRole}`);
+}
+
+
+function eventCost(attendees, cost) {
+    if (!attendees) attendees = readline.question("How many people are attending? ");
+    if (!cost) cost = readline.question("What is the cost per person? ");
+    
+    let totalCost = attendees * cost;
+        if (attendees > 100) {
+		    totalCost *= .9;
+	    }
+	
+    return console.log(totalCost);
+}
+
+
+function validateEmail(email) {
+    if (!email) email = readline.question("What is your email? ");
+    
+    let isValid = false;
+
+    do{
+        if (email.includes("@") && email.includes(".")) {
+            return true;
+        }
+        else
+            email = readline.question("Please enter a valid email address. ");
+    } while (!isValid);
+}
